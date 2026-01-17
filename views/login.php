@@ -1,6 +1,5 @@
 <?php
-// views/login.php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Login-CRUD-MVC/config/controlToken.php'; 
+// views/login.php 
 if (isset($_SESSION['usuario_logueado'])) {  // si el usuario estuviera ya logeado, lo derivamos al inicio interno
     header("Location: ./dashboard.php");    // nosotros haremos comprobación de token
     exit();

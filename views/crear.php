@@ -6,20 +6,82 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Crear Alumno</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Crear Videojuego</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
 </head>
 
-<body>
-    <h2>Crear Nuevo Alumno</h2>
-    <form method="POST" action="index.php?action=create">
-        <label>Nombre: <input type="text" name="nombre" required></label><br>
-        <label>Desarrollador: <input type="text" name="desarrollador" required></label><br>
-        <label>Genero: <input type="text" name="genero" required></label><br>
-        <label>Fecha de Lanzamiento: <input type="date" name="fechaLanzamiento" required></label><br>
-        <label>Multijugador: <input type="checkbox" name="multijugador" value="1"></label><br>
-        <button type="submit">Añadir videojuego</button>
-    </form>
-    <p><a href="index.php?action=index">Volver al listado</a></p>
-</body>
+<body class="bg-primary-subtle">
 
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <form method="POST"
+          action="index.php?action=create"
+          class="bg-white p-4 rounded shadow"
+          style="min-width: 400px;">
+
+        <h3 class="text-center mb-4">Crear Nuevo Videojuego</h3>
+
+        <div class="form-outline mb-3">
+            <label class="form-label">Nombre</label>
+            <input type="text"
+                   name="nombre"
+                   class="form-control"
+                   required>
+        </div>
+
+        <div class="form-outline mb-3">
+            <label class="form-label">Desarrollador</label>
+            <input type="text"
+                   name="desarrollador"
+                   class="form-control"
+                   required>
+        </div>
+
+        <div class="form-outline mb-3">
+            <label class="form-label">Género</label>
+            <input type="text"
+                   name="genero"
+                   class="form-control"
+                   required>
+        </div>
+
+        <div class="form-outline mb-3">
+            <label class="form-label">Fecha de Lanzamiento</label>
+            <input type="date"
+                   name="fechaLanzamiento"
+                   class="form-control"
+                   required>
+        </div>
+
+        <div class="form-check mb-4">
+            <label class="form-check-label" for="multijugador">
+                Multijugador
+            </label>
+            <input class="form-check-input"
+                   type="checkbox"
+                   name="multijugador"
+                   id="multijugador"
+                   value="1">
+        </div>
+
+        <div class="d-grid gap-2">
+            <button type="submit"
+                    class="btn btn-primary">
+                Añadir Videojuego
+            </button>
+
+            <a href="index.php?action=index"
+               class="btn btn-outline-secondary">
+                Volver al listado
+            </a>
+        </div>
+
+    </form>
+</div>
+
+</body>
 </html>

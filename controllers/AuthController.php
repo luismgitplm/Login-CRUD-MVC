@@ -18,27 +18,22 @@ class AuthController                                   // la clase AuthControlle
 
     public function authenticate()                    // aquí confronta con la base de datos
     {
-        // Validación de token csrf
-        if (isset($_POST['csrf_token']) && $_POST['csrf_token'] === $_SESSION['csrf_token']){
-            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                $username = htmlspecialchars($_POST['idusuario']);
-                $password = htmlspecialchars($_POST['password']);
+        
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $username = htmlspecialchars($_POST['idusuario']);
+            $password = htmlspecialchars($_POST['password']);
 
-                if ($this->userModel->login($username, $password)) {
-                    // Autenticación exitosa, iniciar sesión y redirigir al enrutador para que éste envíe al dashboard-inicio
-                    $_SESSION['idusuario'] = $username;
-                    header('Location: index.php?action=index');
-                    exit();
-                } else {
-                    // Autenticación fallida, recargar login con error que mostraría mensaje
-                    $_GET['error'] = "Usuario o contraseña incorrectos.";
-                    include 'views/login.php'; 
-                }
-            } 
-        } else {
-            header('Location: index.php?action=login&error=Debes iniciar sesión para continuar');
-            exit();
-        }
+            if ($this->userModel->login($username, $password)) {
+                // Autenticación exitosa, iniciar sesión y redirigir al enrutador para que éste envíe al dashboard-inicio
+                $_SESSION['idusuario'] = $username;
+                header('Location: index.php?action=index');
+                exit();
+            } else {
+                // Autenticación fallida, recargar login con error que mostraría mensaje
+                $_GET['error'] = "Usuario o contraseña incorrectos.";
+                include 'views/login.php'; 
+            }
+        } 
     }
 
     public function dashboard()

@@ -6,22 +6,88 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Editar Alumno</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Editar Videojuego</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
 </head>
 
-<body>
-    <h2>Editar Alumno</h2>
-    <!-- Usamos $videojuego_data que viene del controlador -->
-    <form method="POST" action="index.php?action=edit&id=<?php echo $videojuego_data->codigo; ?>">
-        <input type="hidden" name="codigo" value="<?php echo $videojuego_data->codigo; ?>">
-        <label>Nombre: <input type="text" name="nombre" value="<?php echo htmlspecialchars($videojuego_data->nombre); ?>" required></label><br>
-        <label>Desarrollador: <input type="text" name="desarrollador" value="<?php echo htmlspecialchars($videojuego_data->desarrollador); ?>" required></label><br>
-        <label>Genero: <input type="text" name="genero" value="<?php echo htmlspecialchars($videojuego_data->genero); ?>" required></label><br>
-        <label>Fecha de Lanzamiento: <input type="date" name="fechaLanzamiento" value="<?php echo htmlspecialchars($videojuego_data->fechaLanzamiento); ?>" required></label><br>
-        <label>Multijugador: <input type="checkbox" name="multijugador" <?php echo $videojuego_data->multijugador ? 'checked' : ''; ?>></label><br>
-        <button type="submit" name="update">Actualizar Videojuego</button>
-    </form>
-    <p><a href="index.php?action=index">Volver al listado</a></p>
-</body>
+<body class="bg-primary-subtle">
 
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <form method="POST"
+          action="index.php?action=edit&id=<?php echo $videojuego_data->codigo; ?>"
+          class="bg-white p-4 rounded shadow"
+          style="min-width: 400px;">
+
+        <h3 class="text-center mb-4">Editar Videojuego</h3>
+
+        <input type="hidden" name="codigo"
+               value="<?php echo $videojuego_data->codigo; ?>">
+
+        <div class="form-outline mb-3">
+            <label class="form-label">Nombre</label>
+            <input type="text"
+                   name="nombre"
+                   class="form-control"
+                   value="<?php echo htmlspecialchars($videojuego_data->nombre); ?>"
+                   required>
+        </div>
+
+        <div class="form-outline mb-3">
+            <label class="form-label">Desarrollador</label>
+            <input type="text"
+                   name="desarrollador"
+                   class="form-control"
+                   value="<?php echo htmlspecialchars($videojuego_data->desarrollador); ?>"
+                   required>
+        </div>
+
+        <div class="form-outline mb-3">
+            <label class="form-label">Género</label>
+            <input type="text"
+                   name="genero"
+                   class="form-control"
+                   value="<?php echo htmlspecialchars($videojuego_data->genero); ?>"
+                   required>
+        </div>
+
+        <div class="form-outline mb-3">
+            <label class="form-label">Fecha de Lanzamiento</label>
+            <input type="date"
+                   name="fechaLanzamiento"
+                   class="form-control"
+                   value="<?php echo htmlspecialchars($videojuego_data->fechaLanzamiento); ?>"
+                   required>
+        </div>
+
+        <div class="form-check mb-4">
+            <label class="form-check-label" for="multijugador">
+                Multijugador
+            </label>
+            <input class="form-check-input"
+                   type="checkbox"
+                   name="multijugador"
+                   id="multijugador"
+                   <?php echo $videojuego_data->multijugador ? 'checked' : ''; ?>>
+        </div>
+
+        <div class="d-grid gap-2">
+            <button type="submit"
+                    name="update"
+                    class="btn btn-primary">
+                Actualizar Videojuego
+            </button>
+
+            <a href="index.php?action=index"
+               class="btn btn-outline-secondary">
+                Volver al listado
+            </a>
+        </div>
+
+    </form>
+</div>
+
+</body>
 </html>
