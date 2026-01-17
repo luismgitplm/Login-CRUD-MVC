@@ -69,6 +69,6 @@ if (isset($_SESSION['usuario_logueado'])) {  // si el usuario estuviera ya logea
     </form>
     </div>
 
-    <script src="/Login-MVC/views/validacion.js"></script>
+    <script src="/Login-CRUD-MVC/public/validacion.js"></script>
 </body>
 </html>

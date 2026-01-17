@@ -12,6 +12,7 @@
 </head>
 
 <body class="bg-light">
+  <div class="container mt-4">
 
     <?php if (isset($_GET['message'])): ?>
         <div class="text-center alert alert-success">
@@ -26,7 +27,6 @@
         </div>
     <?php endif; ?>
 
-  <div class="container mt-4">
     <h1 class="text-center">Listado de Videojuegos</h1>
     <table class="table table-bordered table-hover align-middle">
         <thead class="table-primary text-center">
@@ -90,9 +90,15 @@
         Añadir nuevo videojuego
     </a>
 
+    <a href="index.php?action=logout"
+        class="btn btn-sm btn-outline-primary">
+        Cerrar sesión (Volver al login)
+
+    </a>
+
 </div>
 
-    <a href="index.php?action=logout">Cerrar sesión (Volver al login)</a>
+    
 </body>
 
 </html>
