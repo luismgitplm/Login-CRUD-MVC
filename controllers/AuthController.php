@@ -36,16 +36,6 @@ class AuthController                                   // la clase AuthControlle
         } 
     }
 
-    public function dashboard()
-    {
-        // Verificar si el usuario ha iniciado sesión
-        if (!isset($_SESSION['idusuario'])) {
-            header('Location: index.php?action=login');
-            exit();
-        }
-        // Carga la vista del dashboard (página de bienvenida)
-        include 'views/dashboard.php';
-    }
 
     public function logout()
     {
