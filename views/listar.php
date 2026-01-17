@@ -1,4 +1,6 @@
 <!-- views/listar.php -->
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/Login-CRUD-MVC/config/controlToken.php'; ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
