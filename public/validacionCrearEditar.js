@@ -1,24 +1,34 @@
 import { contieneCaracteresPeligrosos } from "./contieneCaracteresPeligrosos.js";
 
 document.addEventListener("DOMContentLoaded" , () => {
-    const nombre  = document.getElementById("nombre")
-    const desarrollador = document.getElementById("desarrollador")
-    const genero = document.getElementById("genero")
-
-    const mensajeCorreccion = (valor,mensaje) => {
-        mensaje.innerText = contieneCaracteresPeligrosos(valor) ? "El campo no debe contener los siguientes caracteres: <>\'\"&" : "";
+    const formulario = document.getElementById("form")
+    const correccionEnvio = document.getElementById("correccionEnvio")
+    const camposValidos = {
+        nombre: true,
+        desarrollador: true,
+        genero: true
     }
 
-    nombre.addEventListener("input", () => {
-        mensajeCorreccion(nombre.value,document.getElementById("nombreCorreccion"))
-    })
-     
-    desarrollador.addEventListener("input", () => {
-        mensajeCorreccion(desarrollador.value,document.getElementById("desarrolladorCorreccion"))
-    })
+    const mensajeCorreccion = (idcampo,mensaje) => {
+        mensaje.innerText = contieneCaracteresPeligrosos(document.getElementById(idcampo).value) ? "El campo no debe contener los siguientes caracteres: <>\'\"&" : "";
+        camposValidos[idcampo] = mensaje.innerText.length > 0 ? false : true;
+    }
 
-    genero.addEventListener("input", () => {
-        mensajeCorreccion(genero.value,document.getElementById("generoCorreccion"))
+    const validar = (idCampo,idMensaje) => {
+        document.getElementById(idCampo).addEventListener("input", () => {
+            mensajeCorreccion(idCampo,document.getElementById(idMensaje))
+        })
+    }
+
+    validar("nombre","nombreCorreccion")
+
+    validar("desarrollador","desarrolladorCorreccion")
+
+    validar("genero","generoCorreccion")
+
+    formulario.addEventListener("submit", (e) => {
+        e.preventDefault()
+        Object.values(camposValidos).every((valido) => valido) ? formulario.submit() : correccionEnvio.innerText = "Todos los campos deben ser correctos"
     })
 
 })

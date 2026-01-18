@@ -20,6 +20,7 @@
 <div class="container d-flex justify-content-center align-items-center min-vh-100">
     <form method="POST"
           action="index.php?action=create"
+          id="form"
           class="bg-white p-4 rounded shadow"
           style="min-width: 400px;">
 
@@ -76,6 +77,7 @@
 
         <div class="d-grid gap-2">
             <button type="submit"
+                    id="crear"
                     class="btn btn-primary">
                 Añadir Videojuego
             </button>
@@ -85,6 +87,8 @@
                 Volver al listado
             </a>
         </div>
+
+        <div id="correccionEnvio" class = "form-text text-danger"></div>
 
     </form>
 </div>

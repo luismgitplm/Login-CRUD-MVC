@@ -44,6 +44,15 @@ document.addEventListener('DOMContentLoaded', () => {
         
     })
 
+    // Comprobación de las variables boolean que validan ambos campos antes de enviar
+    formulario.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const mensaje = document.getElementById("envioCorreccion");
+        mensaje.innerText = (!passValida || !idValido) ? 'Debe indicar un usuario y una contraseña válidos' : '';
+
+        if (passValida && idValido) formulario.submit();
+    })
+
    
 })
 
