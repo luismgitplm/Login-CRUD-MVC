@@ -9,14 +9,17 @@ document.addEventListener("DOMContentLoaded" , () => {
         genero: true
     }
 
-    const mensajeCorreccion = (idcampo,mensaje) => {
-        mensaje.innerText = contieneCaracteresPeligrosos(document.getElementById(idcampo).value) ? "El campo no debe contener los siguientes caracteres: <>\'\"&" : "";
-        camposValidos[idcampo] = mensaje.innerText.length > 0 ? false : true;
+    const mensajeCorreccion = (campo,mensaje) => {
+        mensaje.innerText = contieneCaracteresPeligrosos(campo.value) ? "El campo no debe contener los siguientes caracteres: <>\'\"&" : "";
+        camposValidos[campo.id] = mensaje.innerText.length > 0 ? false : true;
     }
 
     const validar = (idCampo,idMensaje) => {
-        document.getElementById(idCampo).addEventListener("input", () => {
-            mensajeCorreccion(idCampo,document.getElementById(idMensaje))
+        const campo = document.getElementById(idCampo)
+        const mensaje = document.getElementById(idMensaje)
+
+        campo.addEventListener("input", () => {
+            mensajeCorreccion(campo,mensaje)
         })
     }
 
