@@ -29,24 +29,30 @@
             <label class="form-label">Nombre</label>
             <input type="text"
                    name="nombre"
+                   id="nombre"
                    class="form-control"
                    required>
+            <div id = "nombreCorreccion" class = "form-text text-danger"></div>
         </div>
 
         <div class="form-outline mb-3">
             <label class="form-label">Desarrollador</label>
             <input type="text"
                    name="desarrollador"
+                   id="desarrollador"
                    class="form-control"
                    required>
+            <div id = "desarrolladorCorreccion" class = "form-text text-danger"></div>
         </div>
 
         <div class="form-outline mb-3">
             <label class="form-label">Género</label>
             <input type="text"
                    name="genero"
+                   id="genero"
                    class="form-control"
                    required>
+            <div id = "generoCorreccion" class = "form-text text-danger"></div>
         </div>
 
         <div class="form-outline mb-3">
@@ -83,5 +89,6 @@
     </form>
 </div>
 
+<script type="module" src="/Login-CRUD-MVC/public/validacionCrearEditar.js"></script>
 </body>
 </html>
