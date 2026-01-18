@@ -10,13 +10,13 @@ El acceso a la base de datos es gestionado por la clase `Database.php`, que util
 ### 2. **Usuario (User.php)**
 El archivo `User.php` (clase Usuario) contiene el método `login`, que se apoya en la clase `Database.php` para comprobar que los datos proporcionados por el formulario coinciden con los almacenados en la base de datos.
 
-### 3. **Controlador de Autenticación (AuthController.php)**
+### 3. **Controladores**
 El controlador `AuthController.php` se encarga de realizar la comprobación de las credenciales a través del método `authenticate`. Además, contiene los métodos:
 - `login`
 - `authenticate`
 - `logout`
 
-  El controlador `VideojuegoController.php` contiene los métodos que dirigen a las distintas vistas del CRUD una vez se ha accedido a este:
+El controlador `VideojuegoController.php` contiene los métodos que dirigen a las distintas vistas del CRUD una vez se ha accedido a este:
 - `index` (muestra la tabla de datos)
 - `create` (muestra el formulario para añadir un nuevo videojuego) 
 - `edit` (muestra el formulario para editar un videojuego concreto)
