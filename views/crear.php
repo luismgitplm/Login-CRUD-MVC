@@ -10,7 +10,6 @@
 
     <title>Crear Videojuego</title>
 
-    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
           rel="stylesheet">
 </head>
@@ -26,6 +25,7 @@
 
         <h3 class="text-center mb-4">Crear Nuevo Videojuego</h3>
 
+        <!--Los campos de texto tienen un div en el que se mostrará un mensaje de corrección si es necesario-->
         <div class="form-outline mb-3">
             <label class="form-label">Nombre</label>
             <input type="text"
