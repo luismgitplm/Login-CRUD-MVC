@@ -1,7 +1,7 @@
 <?php
 // views/login.php 
-if (isset($_SESSION['usuario_logueado'])) {  // si el usuario estuviera ya logeado, lo derivamos al inicio interno
-    header("Location: ./dashboard.php");    // nosotros haremos comprobación de token
+if (isset($_SESSION['usuario_logueado'])) {  
+    header("Location: ./dashboard.php");    
     exit();
 }
 ?>
@@ -17,7 +17,7 @@ if (isset($_SESSION['usuario_logueado'])) {  // si el usuario estuviera ya logea
 </head>
 <body class="bg-primary-subtle">
     <div id="wrapper" class="container d-flex justify-content-center align-items-center text-center  min-vh-100">
-    <form action="/Login-CRUD-MVC/index.php?action=authenticate" method="post" id="formulario">
+    <form action="index.php?action=authenticate" method="post" id="formulario">
         <div>
             <h3>Inicie Sesión</h3>
         </div>

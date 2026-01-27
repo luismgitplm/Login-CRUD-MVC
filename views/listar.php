@@ -92,7 +92,7 @@
 
     <a href="index.php?action=logout"
         class="btn btn-sm btn-outline-primary">
-        Cerrar sesión (Volver al login)
+        Cerrar sesión 
 
     </a>
 
